@@ -1,0 +1,18 @@
+<%- include('partials/header') -%>
+
+<h1> Blog List </h1>
+<hr>
+<div>
+    <div class="post-card">
+        <% postList.forEach( post => { %>
+        <% const content = post.body.substring(0, 100) %>
+        <div class="post">
+            <h3> <%= post.title %> </h3>
+            <p> <%= content %> ...</p>
+            <a href="/blog/<%= post.title %>" class="text-link">read more...</a>
+        </div>
+    <% }) %>
+    </div>
+</div>
+
+<%- include('partials/footer') -%>
